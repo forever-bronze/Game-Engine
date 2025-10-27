@@ -1,0 +1,6 @@
+CompileFlags:
+  Add: 
+    - -ISDL2
+    - -I/usr/include/SDL2
+    - -I/usr/local/include/SDL2
+  CompilationDatabase: build
