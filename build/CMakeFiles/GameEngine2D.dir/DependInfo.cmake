@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ghaith/dev/Game-Engine/src/main.cpp" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o" "gcc" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o.d"
+  "/home/ghaith/main/dev/Game-Engine/src/main.cpp" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o" "gcc" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o.d"
   "" "GameEngine2D" "gcc" "CMakeFiles/GameEngine2D.dir/link.d"
   )
 

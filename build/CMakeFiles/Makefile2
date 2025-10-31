@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ghaith/dev/Game-Engine
+CMAKE_SOURCE_DIR = /home/ghaith/main/dev/Game-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ghaith/dev/Game-Engine/build
+CMAKE_BINARY_DIR = /home/ghaith/main/dev/Game-Engine/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/GameEngine2D.dir/clean
 CMakeFiles/GameEngine2D.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine2D.dir/build.make CMakeFiles/GameEngine2D.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine2D.dir/build.make CMakeFiles/GameEngine2D.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ghaith/dev/Game-Engine/build/CMakeFiles --progress-num=1,2 "Built target GameEngine2D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ghaith/main/dev/Game-Engine/build/CMakeFiles --progress-num=1,2 "Built target GameEngine2D"
 .PHONY : CMakeFiles/GameEngine2D.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/GameEngine2D.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ghaith/dev/Game-Engine/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ghaith/main/dev/Game-Engine/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/GameEngine2D.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ghaith/dev/Game-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ghaith/main/dev/Game-Engine/build/CMakeFiles 0
 .PHONY : CMakeFiles/GameEngine2D.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ GameEngine2D: CMakeFiles/GameEngine2D.dir/rule
 # codegen rule for target.
 CMakeFiles/GameEngine2D.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GameEngine2D.dir/build.make CMakeFiles/GameEngine2D.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ghaith/dev/Game-Engine/build/CMakeFiles --progress-num=1,2 "Finished codegen for target GameEngine2D"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ghaith/main/dev/Game-Engine/build/CMakeFiles --progress-num=1,2 "Finished codegen for target GameEngine2D"
 .PHONY : CMakeFiles/GameEngine2D.dir/codegen
 
 # clean rule for target.
