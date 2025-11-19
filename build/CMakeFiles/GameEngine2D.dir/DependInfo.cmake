@@ -8,16 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ghaith/main/dev/Game-Engine/src/main.cpp" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o" "gcc" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o.d"
-  "" "GameEngine2D" "gcc" "CMakeFiles/GameEngine2D.dir/link.d"
+  "/home/omar/CodingProjects/Game-Engine/src/GameEngine.cpp" "CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o" "gcc" "CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o.d"
+  "/home/omar/CodingProjects/Game-Engine/src/main.cpp" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o" "gcc" "CMakeFiles/GameEngine2D.dir/src/main.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

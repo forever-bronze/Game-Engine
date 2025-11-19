@@ -1,8 +1,9 @@
-CMakeFiles/GameEngine2D.dir/src/main.cpp.o: \
- /home/omar/CodingProjects/Game-Engine/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h \
+CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o: \
+ /home/omar/CodingProjects/Game-Engine/src/GameEngine.cpp \
+ /usr/include/stdc-predef.h \
+ /home/omar/CodingProjects/Game-Engine/include/GameEngine.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
  /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -341,5 +342,4 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/fmt/core.h \
  /usr/include/c++/11/cstddef /usr/include/c++/11/cstring \
  /usr/include/c++/11/iostream /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
- /home/omar/CodingProjects/Game-Engine/include/GameEngine.h
+ /usr/include/c++/11/bits/istream.tcc

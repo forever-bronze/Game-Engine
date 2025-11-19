@@ -1,8 +1,12 @@
 [
 {
-  "directory": "/home/ghaith/main/dev/Game-Engine/build",
-  "command": "/usr/bin/c++ -DFMT_SHARED -I/home/ghaith/main/dev/Game-Engine/include -isystem /usr/include/SDL2 -std=gnu++20 -o CMakeFiles/GameEngine2D.dir/src/main.cpp.o -c /home/ghaith/main/dev/Game-Engine/src/main.cpp",
-  "file": "/home/ghaith/main/dev/Game-Engine/src/main.cpp",
-  "output": "CMakeFiles/GameEngine2D.dir/src/main.cpp.o"
+  "directory": "/home/omar/CodingProjects/Game-Engine/build",
+  "command": "/usr/bin/c++ -DFMT_LOCALE -DFMT_SHARED -I/home/omar/CodingProjects/Game-Engine/include -I/usr/include/SDL2 -std=gnu++20 -o CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o -c /home/omar/CodingProjects/Game-Engine/src/GameEngine.cpp",
+  "file": "/home/omar/CodingProjects/Game-Engine/src/GameEngine.cpp"
+},
+{
+  "directory": "/home/omar/CodingProjects/Game-Engine/build",
+  "command": "/usr/bin/c++ -DFMT_LOCALE -DFMT_SHARED -I/home/omar/CodingProjects/Game-Engine/include -I/usr/include/SDL2 -std=gnu++20 -o CMakeFiles/GameEngine2D.dir/src/main.cpp.o -c /home/omar/CodingProjects/Game-Engine/src/main.cpp",
+  "file": "/home/omar/CodingProjects/Game-Engine/src/main.cpp"
 }
 ]
