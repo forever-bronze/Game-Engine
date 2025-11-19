@@ -97,6 +97,7 @@ GameEngine2D: CMakeFiles/GameEngine2D.dir/src/main.cpp.o
 GameEngine2D: CMakeFiles/GameEngine2D.dir/build.make
 GameEngine2D: CMakeFiles/GameEngine2D.dir/compiler_depend.ts
 GameEngine2D: /usr/lib/x86_64-linux-gnu/libSDL2.so
+GameEngine2D: /usr/lib/x86_64-linux-gnu/libfmt.so.10.1.0
 GameEngine2D: CMakeFiles/GameEngine2D.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ghaith/main/dev/Game-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable GameEngine2D"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GameEngine2D.dir/link.txt --verbose=$(VERBOSE)

@@ -227,6 +227,9 @@ GameEngine2D_SOURCE_DIR:STATIC=/home/ghaith/main/dev/Game-Engine
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
 
+//The directory containing a CMake configuration file for fmt.
+fmt_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/fmt
+
 
 ########################
 # INTERNAL cache entries

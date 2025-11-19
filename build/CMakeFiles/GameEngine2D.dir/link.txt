@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/GameEngine2D.dir/link.d CMakeFiles/GameEngine2D.dir/src/main.cpp.o -o GameEngine2D  /usr/lib/x86_64-linux-gnu/libSDL2.so
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/GameEngine2D.dir/link.d CMakeFiles/GameEngine2D.dir/src/main.cpp.o -o GameEngine2D  /usr/lib/x86_64-linux-gnu/libSDL2.so /usr/lib/x86_64-linux-gnu/libfmt.so.10.1.0

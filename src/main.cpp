@@ -2,10 +2,14 @@
 #include <SDL.h>
 #include <SDL_error.h>
 #include <SDL_render.h>
+#include <SDL_timer.h>
 #include <SDL_video.h>
+#include <cstdlib>
+#include <fmt/format.h>
 #include <iostream>
 #include <memory>
 #include <stdexcept>
+#include <unistd.h>
 
 class GameEngine {
 public:
@@ -21,10 +25,12 @@ private:
   const std::string title;
 
   std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window;
+  std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)> renderer;
 };
 
 GameEngine::GameEngine()
-    : title{"Open window"}, window{nullptr, SDL_DestroyWindow} {}
+    : title{"Open window"}, window{nullptr, SDL_DestroyWindow},
+      renderer{nullptr, SDL_DestroyRenderer} {}
 
 void GameEngine::init() {
   this->window.reset(
@@ -32,66 +38,44 @@ void GameEngine::init() {
                        SDL_WINDOWPOS_CENTERED, this->width, this->height, 0));
   if (!this->window) {
     // format is a c++20 feature make sure to include -std=c++20 flag with g++
-    auto error = std::format("failed to initialize window {}", SDL_GetError());
+    auto error = fmt::format("failed to initialize window {}", SDL_GetError());
+    throw std::runtime_error(error);
+  }
+
+  this->renderer.reset(
+      SDL_CreateRenderer(this->window.get(), -1, SDL_RENDERER_ACCELERATED));
+  if (!this->renderer) {
+    // format is a c++20 feature make sure to include -std=c++20 flag with g++
+    auto error =
+        fmt::format("failed to initialize renderer {}", SDL_GetError());
     throw std::runtime_error(error);
   }
 }
 
+void initialize_sdl() {
+  if (SDL_Init(SDL_INIT_EVERYTHING)) {
+    auto error = fmt::format("error handling SDL2: {}", SDL_GetError());
+    throw std::runtime_error(error);
+  }
+}
+
+void close_sdl() { SDL_Quit(); }
+
+void GameEngine::run() { SDL_Delay(2000); }
+
 int main() {
-  // Corrected SDL types (capital W and R)
-  SDL_Window *window = nullptr;
-  SDL_Renderer *renderer = nullptr;
+  int exit_val = EXIT_SUCCESS;
 
-  // Corrected SDL constant (underscores and uppercase)
-  if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
-    std::cout << "SDL could not initialize! Error: " << SDL_GetError()
-              << std::endl;
-    return 1;
+  try {
+    initialize_sdl();
+    GameEngine gameEngine;
+    gameEngine.init();
+    gameEngine.run();
+  } catch (const std::runtime_error &e) {
+    std::cerr << e.what() << std::endl;
+    exit_val = EXIT_FAILURE;
   }
-
-  // Create window
-  window = SDL_CreateWindow("Game Engine", SDL_WINDOWPOS_CENTERED,
-                            SDL_WINDOWPOS_CENTERED, 800, 600,
-                            SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
-
-  if (!window) {
-    std::cout << "Window could not be created! Error: " << SDL_GetError()
-              << std::endl;
-    SDL_Quit();
-    return 1;
-  }
-
-  // Create renderer
-  renderer = SDL_CreateRenderer(
-      window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
-  if (!renderer) {
-    std::cout << "Renderer could not be created! Error: " << SDL_GetError()
-              << std::endl;
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-    return 1;
-  }
-
-  std::cout << "SDL initialized successfully!" << std::endl;
-
-  while (true) {
-    char input;
-    std::cout << "quit with q :" << "\n";
-    std::cout << "     -input: ";
-    std::cin >> input;
-
-    if (input == 'q') {
-      // Cleanup
-      SDL_DestroyRenderer(renderer);
-      SDL_DestroyWindow(window);
-      SDL_Quit();
-      std::cout << "Closed the Window";
-      break;
-    } else {
-      continue;
-    }
-  }
+  close_sdl();
 
   return 0; // Added missing semicolon
 }

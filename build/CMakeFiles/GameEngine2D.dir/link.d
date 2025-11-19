@@ -4,6 +4,7 @@ GameEngine2D: \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/GameEngine2D.dir/src/main.cpp.o \
   /usr/lib/x86_64-linux-gnu/libSDL2.so \
+  /usr/lib/x86_64-linux-gnu/libfmt.so.10.1.0 \
   /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
@@ -49,7 +50,6 @@ GameEngine2D: \
   /lib/x86_64-linux-gnu/libxkbcommon.so.0 \
   /lib/x86_64-linux-gnu/libdecor-0.so.0 \
   /lib64/ld-linux-x86-64.so.2 \
-  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libgcc_s.so.1 \
   /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-17.0.so \
   /lib/x86_64-linux-gnu/libdbus-1.so.3 \
   /lib/x86_64-linux-gnu/libxcb.so.1 \
@@ -80,6 +80,8 @@ GameEngine2D: \
 CMakeFiles/GameEngine2D.dir/src/main.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libSDL2.so:
+
+/usr/lib/x86_64-linux-gnu/libfmt.so.10.1.0:
 
 /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so:
 
@@ -170,8 +172,6 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o:
 /lib/x86_64-linux-gnu/libdecor-0.so.0:
 
 /lib64/ld-linux-x86-64.so.2:
-
-/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libgcc_s.so.1:
 
 /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-17.0.so:
 
