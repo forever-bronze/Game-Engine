@@ -22,6 +22,7 @@ public:
 
 private:
   const std::string title;
+  SDL_Event event;
 
   std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window;
   std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)> renderer;

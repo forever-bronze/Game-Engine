@@ -33,7 +33,8 @@ int main() {
     std::cerr << e.what() << std::endl;
     exit_val = EXIT_FAILURE;
   }
+
   close_sdl();
 
-  return 0; // Added missing semicolon
+  return 0;
 }

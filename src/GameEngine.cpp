@@ -27,9 +27,29 @@ void GameEngine::init() {
 
 
 void GameEngine::run() { 
+  while (true) {
+    while (SDL_PollEvent(&this->event)) {
+      switch (event.type) {
+        case SDL_QUIT:
+          return;
+          break;
+        case SDL_KEYDOWN:
+          switch (event.key.keysym.scancode) {
+            case SDL_SCANCODE_ESCAPE:
+              return;
+              break;
+            default:
+              break;
+          }
+        default:
+          break;
+      }
+    }
+
     SDL_RenderClear(this->renderer.get());
 
     SDL_RenderPresent(this->renderer.get());
 
-    SDL_Delay(5000); 
+    SDL_Delay(16); 
+  }
 }
