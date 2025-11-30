@@ -4,12 +4,15 @@
 #include <SDL_timer.h>
 #include <SDL_video.h>
 #include <SDL_image.h>
+
 #include <cstdlib>
 #include <fmt/format.h>
 #include <iostream>
 #include <memory>
 #include <stdexcept>
 #include <unistd.h>
+#include <random>
+
 
 class GameEngine {
 public:
@@ -25,6 +28,8 @@ public:
 private:
   const std::string title;
   SDL_Event event;
+  std::mt19937 gen;
+  std::uniform_int_distribution<Uint8> rand_color;
 
   std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window;
   std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)> renderer;

@@ -11,6 +11,7 @@
 #include <memory>
 #include <stdexcept>
 #include <unistd.h>
+#include <random>
 
 #include "GameEngine.h"
 

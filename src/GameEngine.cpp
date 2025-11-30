@@ -3,6 +3,8 @@
 
 GameEngine::GameEngine()
     : title{"Open window"}, 
+      gen{},
+      rand_color{0, 255},
       window{nullptr, SDL_DestroyWindow},
       renderer{nullptr, SDL_DestroyRenderer},
       background{nullptr, SDL_DestroyTexture} {}
@@ -24,6 +26,8 @@ void GameEngine::init() {
         fmt::format("failed to initialize renderer {}", SDL_GetError());
     throw std::runtime_error(error);
   }
+
+  this->gen.seed(std::random_device()());
 }
 
 
@@ -40,14 +44,23 @@ void GameEngine::run() {
   while (true) {
     while (SDL_PollEvent(&this->event)) {
       switch (event.type) {
+
         case SDL_QUIT:
           return;
           break;
+
         case SDL_KEYDOWN:
           switch (event.key.keysym.scancode) {
             case SDL_SCANCODE_ESCAPE:
               return;
               break;
+            case SDL_SCANCODE_SPACE:
+              SDL_SetRenderDrawColor(this->renderer.get(), 
+                  this->rand_color(gen), 
+                  this->rand_color(gen), 
+                  this->rand_color(gen), 255);
+            break;
+
             default:
               break;
           }
