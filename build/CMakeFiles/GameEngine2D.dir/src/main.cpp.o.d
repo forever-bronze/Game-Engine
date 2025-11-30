@@ -221,6 +221,7 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/include/SDL2/SDL_error.h /usr/include/SDL2/SDL_render.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_video.h \
+ /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
  /usr/include/fmt/format.h /usr/include/c++/11/cstdint \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
@@ -342,4 +343,4 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: \
  /usr/include/c++/11/cstddef /usr/include/c++/11/cstring \
  /usr/include/c++/11/iostream /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/omar/CodingProjects/Game-Engine/include/GameEngine.h
+ /home/omar/CodingProjects/Game-Engine/src/GameEngine.h

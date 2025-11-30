@@ -3,6 +3,7 @@
 #include <SDL_render.h>
 #include <SDL_timer.h>
 #include <SDL_video.h>
+#include <SDL_image.h>
 #include <cstdlib>
 #include <fmt/format.h>
 #include <iostream>

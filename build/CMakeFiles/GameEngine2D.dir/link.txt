@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o CMakeFiles/GameEngine2D.dir/src/main.cpp.o -o GameEngine2D  -L/usr/lib/x86_64-linux-gnu  -lSDL2 /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1 -Wl,--as-needed 
+/usr/bin/c++ CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o CMakeFiles/GameEngine2D.dir/src/main.cpp.o -o GameEngine2D  -L/usr/lib/x86_64-linux-gnu  -lSDL2 -lSDL2_image /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1 -Wl,--as-needed 

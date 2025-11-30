@@ -3,23 +3,38 @@
 #include <SDL_render.h>
 #include <SDL_timer.h>
 #include <SDL_video.h>
+#include <SDL_image.h>
+
 #include <cstdlib>
 #include <fmt/format.h>
 #include <iostream>
 #include <memory>
 #include <stdexcept>
 #include <unistd.h>
-#include <GameEngine.h>
+
+#include "GameEngine.h"
 
 
 void initialize_sdl() {
+  int img_flags = IMG_INIT_PNG;
+
   if (SDL_Init(SDL_INIT_EVERYTHING)) {
-    auto error = fmt::format("error handling SDL2: {}", SDL_GetError());
+    auto error = fmt::format("error initialize SDL2: {}", SDL_GetError());
     throw std::runtime_error(error);
   }
+
+  if ((IMG_Init(img_flags) & img_flags) != img_flags )
+  {
+    auto error = fmt::format("error initialize SDL_image: {}", IMG_GetError());
+    throw std::runtime_error(error);
+  }
+
 }
 
-void close_sdl() { SDL_Quit(); }
+void close_sdl() { 
+  IMG_Quit(); 
+  SDL_Quit(); 
+}
 
 int main() {
   int exit_val = EXIT_SUCCESS;
