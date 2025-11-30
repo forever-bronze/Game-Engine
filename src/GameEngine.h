@@ -17,6 +17,7 @@ public:
 
   void run();
   void init();
+  void load_media();
 
   static constexpr int width{800};
   static constexpr int height{600};
@@ -27,4 +28,6 @@ private:
 
   std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> window;
   std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)> renderer;
+  std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)> background;
+
 };

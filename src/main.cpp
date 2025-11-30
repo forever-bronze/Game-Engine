@@ -16,9 +16,10 @@
 
 
 void initialize_sdl() {
+  int sdl_flags = SDL_INIT_EVERYTHING;
   int img_flags = IMG_INIT_PNG;
 
-  if (SDL_Init(SDL_INIT_EVERYTHING)) {
+  if (SDL_Init(sdl_flags)) {
     auto error = fmt::format("error initialize SDL2: {}", SDL_GetError());
     throw std::runtime_error(error);
   }
@@ -43,6 +44,7 @@ int main() {
     initialize_sdl();
     GameEngine gameEngine;
     gameEngine.init();
+    gameEngine.load_media();
     gameEngine.run();
   } catch (const std::runtime_error &e) {
     std::cerr << e.what() << std::endl;
