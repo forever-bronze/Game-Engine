@@ -219,11 +219,12 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- /usr/include/SDL2/SDL_error.h /usr/include/SDL2/SDL_render.h \
- /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_video.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /usr/include/fmt/format.h /usr/include/c++/11/cstdint \
- /usr/include/c++/11/memory /usr/include/c++/11/bits/allocator.h \
+ /usr/include/SDL2/SDL_ttf.h /usr/include/SDL2/SDL_error.h \
+ /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_timer.h \
+ /usr/include/SDL2/SDL_video.h /usr/include/fmt/format.h \
+ /usr/include/c++/11/cstdint /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
  /usr/include/c++/11/ext/new_allocator.h \
  /usr/include/c++/11/bits/memoryfwd.h \
