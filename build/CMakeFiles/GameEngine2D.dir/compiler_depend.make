@@ -266,6 +266,7 @@ CMakeFiles/GameEngine2D.dir/src/GameEngine.cpp.o: ../src/GameEngine.cpp \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL_mixer.h \
   /usr/include/SDL2/SDL_error.h \
   /usr/include/SDL2/SDL_render.h \
   /usr/include/SDL2/SDL_timer.h \
@@ -701,6 +702,7 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/SDL2/SDL_image.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_ttf.h \
+  /usr/include/SDL2/SDL_mixer.h \
   /usr/include/SDL2/SDL_error.h \
   /usr/include/SDL2/SDL_render.h \
   /usr/include/SDL2/SDL_timer.h \
@@ -958,8 +960,6 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/cstdio:
 
-/usr/include/c++/11/ext/string_conversions.h:
-
 /usr/include/c++/11/bits/string_view.tcc:
 
 /usr/include/linux/limits.h:
@@ -1069,6 +1069,10 @@ CMakeFiles/GameEngine2D.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
 /usr/include/fmt/format.h:
+
+/usr/include/c++/11/ext/string_conversions.h:
+
+/usr/include/SDL2/SDL_mixer.h:
 
 /usr/include/SDL2/SDL_image.h:
 

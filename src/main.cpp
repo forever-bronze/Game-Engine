@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 
 #include <SDL_error.h>
 #include <SDL_render.h>
@@ -22,6 +23,7 @@
 void initialize_sdl() {
   int sdl_flags = SDL_INIT_EVERYTHING;
   int img_flags = IMG_INIT_PNG;
+  int mix_flags = MIX_INIT_OGG;
 
   if (SDL_Init(sdl_flags)) {
     auto error = fmt::format("error initialize SDL2: {}", SDL_GetError());
@@ -39,9 +41,24 @@ void initialize_sdl() {
     throw std::runtime_error(error);
   }
 
+  if ((Mix_Init(mix_flags) & mix_flags) != mix_flags )
+  {
+    auto error = fmt::format("error initialize SDL_mixer: {}", Mix_GetError());
+    throw std::runtime_error(error);
+  }
+
+  if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024))
+  {
+    auto error = fmt::format("error opening audio: {}", Mix_GetError());
+    throw std::runtime_error(error);
+  }
+  
+
 }
 
 void close_sdl() { 
+  Mix_CloseAudio();
+  Mix_Quit();
   TTF_Quit();
   IMG_Quit(); 
   SDL_Quit(); 

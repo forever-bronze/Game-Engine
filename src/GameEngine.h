@@ -1,6 +1,8 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
+
 
 #include <SDL_error.h>
 #include <SDL_render.h>
@@ -19,6 +21,7 @@
 class GameEngine {
 public:
   GameEngine();
+  ~GameEngine();
 
   void run();
   void init();
@@ -62,6 +65,12 @@ private:
 
   std::unique_ptr<SDL_Surface, decltype(&SDL_FreeSurface)> icon_surface;
   std::unique_ptr<SDL_Texture, decltype(&SDL_DestroyTexture)> sprite;
+
+  std::unique_ptr<Mix_Chunk, decltype(&Mix_FreeChunk)> cpp_sound;
+  std::unique_ptr<Mix_Chunk, decltype(&Mix_FreeChunk)> sdl_sound;
+  std::unique_ptr<Mix_Music, decltype(&Mix_FreeMusic)> music;
+
+
 
 
 };

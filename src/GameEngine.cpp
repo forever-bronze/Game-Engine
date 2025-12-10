@@ -14,8 +14,17 @@ GameEngine::GameEngine()
       text{nullptr, SDL_DestroyTexture},
       text_vel{3}, text_xvel{3}, text_yvel{3},
       icon_surface{nullptr, SDL_FreeSurface}, 
-      sprite_rect{0, 0, 0, 0}, sprite_vel(5), sprite{nullptr, SDL_DestroyTexture} 
-      {}
+      sprite_rect{0, 0, 0, 0}, sprite_vel(5), sprite{nullptr, SDL_DestroyTexture},
+      cpp_sound{nullptr, Mix_FreeChunk}, sdl_sound{nullptr, Mix_FreeChunk},
+      music{nullptr, Mix_FreeMusic}
+{
+
+}
+
+GameEngine::~GameEngine() {
+  Mix_HaltChannel(-1);
+  Mix_HaltMusic();
+}
 
 
 void GameEngine::init() {
@@ -70,7 +79,7 @@ void GameEngine::load_media() {
   
   this->text.reset(SDL_CreateTextureFromSurface(this->renderer.get(), this->text_surface.get()));
   if (!this->text) {
-    auto error = fmt::format("failed to creature Texture from Surface {}", SDL_GetError());
+    auto error = fmt::format("failed to create Texture from Surface {}", SDL_GetError());
     throw std::runtime_error(error);
   }
 
@@ -79,7 +88,7 @@ void GameEngine::load_media() {
 
   this->sprite.reset(SDL_CreateTextureFromSurface(this->renderer.get(), this->icon_surface.get()));
   if (!this->sprite) {
-    auto error = fmt::format("failed to creature Texture from Surface {}", SDL_GetError());
+    auto error = fmt::format("failed to create Texture from Surface {}", SDL_GetError());
     throw std::runtime_error(error);
   }
 
@@ -87,6 +96,24 @@ void GameEngine::load_media() {
     auto error = fmt::format("failed to query Texture {}", SDL_GetError());
     throw std::runtime_error(error);
   } 
+
+  this->cpp_sound.reset(Mix_LoadWAV("sounds/Cpp.ogg"));
+  if (!this->cpp_sound) {
+    auto error = fmt::format("failed to load Chunk {}", Mix_GetError());
+    throw std::runtime_error(error);
+  }
+
+  this->sdl_sound.reset(Mix_LoadWAV("sounds/SDL.ogg"));
+  if (!this->sdl_sound) {
+    auto error = fmt::format("failed to load Chunk {}", Mix_GetError());
+    throw std::runtime_error(error);
+  }
+
+  this->music.reset(Mix_LoadMUS("music/freesoftwaresong-8bit.ogg"));
+  if (!this->music) {
+    auto error = fmt::format("failed to load music {}", Mix_GetError());
+    throw std::runtime_error(error);
+  }
 
 }
 
@@ -96,10 +123,12 @@ void GameEngine::update_text() {
 
   if (this->text_rect.x < 0 || this->text_rect.x + this->text_rect.w > this->width) {
     this->text_xvel = -this->text_xvel;
+    Mix_PlayChannel(-1, this->sdl_sound.get(), 0);
   }
 
   if (this->text_rect.y < 0 || this->text_rect.y + this->text_rect.h > this->height) {
     this->text_yvel = -this->text_yvel;
+    Mix_PlayChannel(-1, this->sdl_sound.get(), 0);
   }
   
 }
@@ -119,7 +148,11 @@ void GameEngine::update_sprite() {
   }
 }
 
-void GameEngine::run() { 
+void GameEngine::run() {
+  if (Mix_PlayMusic(this->music.get(), -1)) {
+    auto error = fmt::format("failed to play music {}", Mix_GetError());
+    throw std::runtime_error(error);
+  }
   while (true) {
     while (SDL_PollEvent(&this->event)) {
       switch (event.type) {
@@ -138,7 +171,13 @@ void GameEngine::run() {
                   this->rand_color(this->gen), 
                   this->rand_color(this->gen), 
                   this->rand_color(this->gen), 255);
-            break;
+              Mix_PlayChannel(-1, this->cpp_sound.get(), 0);
+              break;
+
+            case SDL_SCANCODE_M:
+              Mix_PausedMusic() ? Mix_ResumeMusic() : Mix_PauseMusic();
+              break;
+
 
             default:
               break;
